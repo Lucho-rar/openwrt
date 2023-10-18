@@ -1616,6 +1616,18 @@ define Device/lenovo_newifi-d1
 endef
 TARGET_DEVICES += lenovo_newifi-d1
 
+define Device/librerouter_librerouter-r2
+  $(Device/dsa-migration)
+  $(Device/uimage-lzma-loader)
+  IMAGE_SIZE := 16064k
+  DEVICE_VENDOR := LibreRouter
+  DEVICE_MODEL := LibreRouter R2
+  DEVICE_PACKAGES := kmod-usb3
+  SUPPORTED_DEVICES := librerouter-r2
+endef
+TARGET_DEVICES += librerouter_librerouter-r2
+
+
 define Device/linksys_e5600
   $(Device/nand)
   $(Device/uimage-lzma-loader)
