@@ -55,8 +55,7 @@
 
 			partition@30000 {
 				label = "u-boot-env";
-				reg = <0x30000 0x10000>;
-				read-only;
+				reg = <0x30000 0x1000>;
 			};
 
 			factory: partition@40000 {
@@ -68,11 +67,20 @@
 			partition@50000 {
 				compatible = "denx,uimage";
 				label = "firmware";
-				reg = <0x50000 0x1fb0000>;
+				reg = <0x50000 0x1000000>;
+			};
+
+			partition@1500000 {
+				compatible = "denx,uimage";
+				label = "fw2";
+				reg = <0x1500000 0x1000000>;
 			};
 		};
 	};
 };
+
+
+
 
 &gmac1 {
 	status = "okay";
